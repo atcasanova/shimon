@@ -71,7 +71,7 @@ function Sai
     stty sane
     tput cnorm
     tput sgr0
-    echo Score: $i 
+    echo Score: $((--i)) 
     exit $i
 }
 
