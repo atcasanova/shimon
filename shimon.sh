@@ -148,7 +148,7 @@ stty -echo
 for ((i=1;;i++)); do
 	pisca nulo
 	j=1;
-	MEM[$i]=`shuf -i 1-4 -n1`
+	MEM[$i]=$((RANDOM%4+1))
 	MEM2[$i]=${TECLA[${MEM[$i]}]}
 	for r in $(seq $i); do
 		pisca ${TECLA[${MEM[$r]}]} 
@@ -156,6 +156,7 @@ for ((i=1;;i++)); do
 		pisca nulo
 		sleep 0.1
 	done
+	read -t0.1 -n1000000 lixo
 	sleep 0.5 
 	for ((j=1;j<=$i;j++)); do
 		pisca nulo
